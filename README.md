@@ -98,37 +98,5 @@ timeline
 
 ---
 
-### ⚙️ Setup (do this once)
-1. Create a repo named **GITHUB_USERNAME/GITHUB_USERNAME** (special GitHub profile repo).
-2. Add an **`assets/`** folder. Put your dashboard screenshots/GIFs there.
-3. Save **`./assets/space-explosion.svg`** from this repo. It powers the animated banner.
-4. Replace every `GITHUB_USERNAME` above with your actual GitHub username.
-5. (Optional) Enable the snake-contribution graph:
-   - Create `.github/workflows/snake.yml` with:
-```yaml
-name: Generate Snake
-on:
-  schedule: [{cron: "0 */12 * * *"}]
-  workflow_dispatch:
-  push: {branches: ["main"]}
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: Platane/snk@v3
-        with:
-          github_user_name: GITHUB_USERNAME
-          outputs: dist/snake.svg
-      - uses: crazy-max/ghaction-github-pages@v4
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
-   - Then embed:  
-     `<img src="https://raw.githubusercontent.com/GITHUB_USERNAME/GITHUB_USERNAME/output/snake.svg" />`
 
----
-
-<sub>Made with 🚀, 🪐, and lots of data.</sub>
+<sub>Made by abhitej, and lots of data.</sub>
