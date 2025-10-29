@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="mailto:abhitej3718@gmail.com"><img src="https://img.shields.io/badge/Email-abhitej3718%40gmail.com-0A66C2?style=for-the-badge&logo=gmail"></a>
-  <a href="https://www.linkedin.com/in/nidadavolu-abhitejchowdary"><img src="https://img.shields.io/badge/LinkedIn-Abhitej%20Chowdary-0A66C2?style=for-the-badge&logo=linkedin"></a>
+  <a href="https://www.linkedin.com/in/nidadavolu-abhitejchowdary-b9a8711a7/"><img src="https://img.shields.io/badge/LinkedIn-Abhitej%20Chowdary-0A66C2?style=for-the-badge&logo=linkedin"></a>
   <img src="https://komarev.com/ghpvc/?username=Abhitej97&style=for-the-badge" alt="profile views"/>
 </p>
 
