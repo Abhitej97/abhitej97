@@ -67,14 +67,14 @@
 
 ### 📈 GitHub Cosmos
 <p align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=GITHUB_USERNAME&show_icons=true&theme=radical" />
-  <img height="160" src="https://streak-stats.demolab.com?user=GITHUB_USERNAME&theme=radical" />
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=Abhitej97&show_icons=true&theme=radical" />
+  <img height="160" src="https://streak-stats.demolab.com?user=Abhitej97&theme=radical" />
 </p>
 <p align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=GITHUB_USERNAME&layout=compact&theme=radical" />
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Abhitej97&layout=compact&theme=radical" />
 </p>
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=GITHUB_USERNAME&theme=react-dark" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Abhitej97&theme=react-dark" />
 </p>
 
 ---
