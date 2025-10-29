@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=26&duration=3300&pause=800&center=true&vCenter=true&width=920&lines=Hi%2C+I'm+Abhitej+Chowdary+%F0%9F%9A%80;Data+Analyst+%7C+Python+%7C+SQL+%7C+Power+BI;I+turn+data+into+stories+%26+dashboards;" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=26&duration=3300&pause=800&center=true&vCenter=true&width=920&lines=Hi%2C+I'm+Abhitej+Nidadavolu+%F0%9F%9A%80;Data+Analyst+%7C+Python+%7C+SQL+%7C+Power+BI;I+turn+data+into+stories+%26+dashboards;" alt="Typing SVG" />
   </a>
 </p>
 
