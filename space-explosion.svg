@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="420" viewBox="0 0 1600 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient sky -->
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#070B34"/>
+      <stop offset="60%" stop-color="#1B1F50"/>
+      <stop offset="100%" stop-color="#2D1B4E"/>
+    </linearGradient>
+
+    <!-- Glow filter for stars -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Particle symbol -->
+    <symbol id="particle" viewBox="-1 -1 2 2">
+      <circle r="1" fill="white"/>
+    </symbol>
+
+    <!-- Star twinkle animation -->
+    <style><![CDATA[
+      .twinkle { animation: twinkle 2.8s ease-in-out infinite; }
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.4; transform: scale(0.8); }
+        50% { opacity: 1; transform: scale(1.1); }
+      }
+      .title {
+        font: 700 48px 'Orbitron', 'Segoe UI', Roboto, sans-serif;
+        letter-spacing: 1px;
+        fill: #E6F7FF;
+        filter: drop-shadow(0 0 6px rgba(0,255,255,0.6));
+      }
+      .subtitle {
+        font: 400 22px 'Inter', 'Segoe UI', Roboto, sans-serif;
+        fill: #C7D8FF;
+      }
+      .tag {
+        font: 500 16px 'Inter', 'Segoe UI', Roboto, sans-serif;
+        fill: #A5B4FC;
+      }
+    ]]></style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="420" fill="url(#sky)"/>
+
+  <!-- Random stars -->
+  <g id="stars" filter="url(#glow)">
+    <!-- Generate a grid of stars; positions are deterministic -->
+    <!-- Row 1 -->
+    <circle cx="120" cy="60" r="1.6" fill="#B9E6FF" class="twinkle"/>
+    <circle cx="420" cy="40" r="1.2" fill="#E5F0FF" class="twinkle" style="animation-delay: .5s"/>
+    <circle cx="760" cy="70" r="1.4" fill="#D6F5FF" class="twinkle" style="animation-delay: 1.1s"/>
+    <circle cx="1120" cy="50" r="1.1" fill="#F0F9FF" class="twinkle" style="animation-delay: .7s"/>
+    <circle cx="1440" cy="80" r="1.5" fill="#EAF6FF" class="twinkle" style="animation-delay: 1.5s"/>
+    <!-- Row 2 -->
+    <circle cx="70" cy="150" r="1.1" fill="#F0F9FF" class="twinkle" style="animation-delay: .3s"/>
+    <circle cx="350" cy="170" r="1.3" fill="#BEE3FF" class="twinkle" style="animation-delay: 1.7s"/>
+    <circle cx="640" cy="160" r="1.2" fill="#EAF6FF" class="twinkle" style="animation-delay: 1.2s"/>
+    <circle cx="980" cy="140" r="1.4" fill="#B9E6FF" class="twinkle" style="animation-delay: .9s"/>
+    <circle cx="1320" cy="180" r="1.1" fill="#E5F0FF" class="twinkle" style="animation-delay: 1.9s"/>
+    <!-- Row 3 -->
+    <circle cx="210" cy="260" r="1.4" fill="#D6F5FF" class="twinkle" style="animation-delay: .15s"/>
+    <circle cx="540" cy="230" r="1.2" fill="#CFE9FF" class="twinkle" style="animation-delay: .85s"/>
+    <circle cx="870" cy="250" r="1.3" fill="#EAF6FF" class="twinkle" style="animation-delay: 1.35s"/>
+    <circle cx="1200" cy="220" r="1.2" fill="#F0F9FF" class="twinkle" style="animation-delay: .6s"/>
+    <circle cx="1520" cy="240" r="1.5" fill="#EAF6FF" class="twinkle" style="animation-delay: 1.1s"/>
+    <!-- Row 4 -->
+    <circle cx="160" cy="330" r="1.3" fill="#EAF6FF" class="twinkle" style="animation-delay: .4s"/>
+    <circle cx="480" cy="350" r="1.1" fill="#E5F0FF" class="twinkle" style="animation-delay: 1.25s"/>
+    <circle cx="820" cy="340" r="1.3" fill="#D6F5FF" class="twinkle" style="animation-delay: .95s"/>
+    <circle cx="1160" cy="360" r="1.2" fill="#B9E6FF" class="twinkle" style="animation-delay: .2s"/>
+    <circle cx="1480" cy="330" r="1.1" fill="#CFE9FF" class="twinkle" style="animation-delay: 1.45s"/>
+  </g>
+
+  <!-- Expanding supernova ring -->
+  <g>
+    <circle id="ring" cx="800" cy="210" r="10" fill="none" stroke="#8BE9FD" stroke-width="2">
+      <animate attributeName="r" values="10;60;200;500" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0.8;0.4;0" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="2;3;2;1" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle id="ring2" cx="800" cy="210" r="10" fill="none" stroke="#FF8BD8" stroke-width="1.5" opacity="0.8">
+      <animate attributeName="r" values="10;40;120;420" dur="6s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.5;0.3;0" dur="6s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Particle burst -->
+  <g id="burst" filter="url(#glow)">
+    <!-- We'll draw 36 rays -->
+    <g>
+      <!-- Rays -->
+      <g>
+        <!-- Use rotate to place lines around -->
+        <!-- 36 rays -->
+        <!-- Create via manual listing for determinism -->
+        <g transform="rotate(0 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#A0E7FF" stroke-width="1">
+          <animate attributeName="y2" values="210;100" dur="1.2s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(10 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#FFD3F2" stroke-width="1">
+          <animate attributeName="y2" values="210;95" dur="1.2s" begin=".1s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(20 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#C8F5FF" stroke-width="1">
+          <animate attributeName="y2" values="210;98" dur="1.2s" begin=".2s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(30 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#FFE1FF" stroke-width="1">
+          <animate attributeName="y2" values="210;92" dur="1.2s" begin=".3s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(40 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#A0E7FF" stroke-width="1">
+          <animate attributeName="y2" values="210;100" dur="1.2s" begin=".4s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(50 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#FFD3F2" stroke-width="1">
+          <animate attributeName="y2" values="210;95" dur="1.2s" begin=".5s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(60 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#C8F5FF" stroke-width="1">
+          <animate attributeName="y2" values="210;98" dur="1.2s" begin=".6s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(70 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#FFE1FF" stroke-width="1">
+          <animate attributeName="y2" values="210;92" dur="1.2s" begin=".7s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(80 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#A0E7FF" stroke-width="1">
+          <animate attributeName="y2" values="210;100" dur="1.2s" begin=".8s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(90 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#FFD3F2" stroke-width="1">
+          <animate attributeName="y2" values="210;95" dur="1.2s" begin=".9s" repeatCount="indefinite"/></line></g>
+
+        <g transform="rotate(100 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#C8F5FF" stroke-width="1">
+          <animate attributeName="y2" values="210;98" dur="1.2s" begin="1s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(110 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#FFE1FF" stroke-width="1">
+          <animate attributeName="y2" values="210;92" dur="1.2s" begin="1.1s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(120 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#A0E7FF" stroke-width="1">
+          <animate attributeName="y2" values="210;100" dur="1.2s" begin="1.2s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(130 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#FFD3F2" stroke-width="1">
+          <animate attributeName="y2" values="210;95" dur="1.2s" begin="1.3s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(140 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#C8F5FF" stroke-width="1">
+          <animate attributeName="y2" values="210;98" dur="1.2s" begin="1.4s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(150 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#FFE1FF" stroke-width="1">
+          <animate attributeName="y2" values="210;92" dur="1.2s" begin="1.5s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(160 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#A0E7FF" stroke-width="1">
+          <animate attributeName="y2" values="210;100" dur="1.2s" begin="1.6s" repeatCount="indefinite"/></line></g>
+        <g transform="rotate(170 800 210)"><line x1="800" y1="210" x2="800" y2="120" stroke="#FFD3F2" stroke-width="1">
+          <animate attributeName="y2" values="210;95" dur="1.2s" begin="1.7s" repeatCount="indefinite"/></line></g>
+      </g>
+
+      <!-- Core -->
+      <radialGradient id="core" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#FFFFFF" />
+        <stop offset="30%" stop-color="#9AF3FF" />
+        <stop offset="70%" stop-color="#7A4BFF" />
+        <stop offset="100%" stop-color="#2D1B4E" />
+      </radialGradient>
+      <circle cx="800" cy="210" r="26" fill="url(#core)">
+        <animate attributeName="r" values="20;26;20" dur="4s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- Title and tags -->
+  <g transform="translate(80, 110)">
+    <text class="title">Abhitej Chowdary</text>
+    <text class="subtitle" y="48">Data Analyst • Python • SQL • Power BI • AWS • Azure</text>
+    <text class="tag" y="82">Turning data into stories and dashboards — with cosmic vibes 🚀</text>
+  </g>
+</svg>
